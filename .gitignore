@@ -1,1 +1,4 @@
 packages/
+
+# Don't track .DS_Store, for subl txt users
+.DS_Store
