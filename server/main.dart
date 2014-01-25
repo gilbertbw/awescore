@@ -31,13 +31,10 @@ void topTenUsers(var req, var res){
 void err404(var req, var res){
   
 //  Return JSON like so: {error:{number:404,description:"Endpoint not found"}}
-  Map data = {};
-  data['error'] = generateError(404, "Endpoint not found");
-  
-  
+  Map data = {"error":generateError(404, "Endpoint not found")};
   
   res.write(JSON.encode(data));
   res.close();
 }
 
-generateError(num, description) => r'{number:' + num.toString() + r', description:\"' + description + r'\"}';
+generateError(num, description) => '{number:${num.toString()}, description:"$description"}';
